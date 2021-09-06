@@ -32,6 +32,7 @@ module.exports = {
         // include: /\.module\.(scss|sass)$/,
         use: [
           MiniCssExtractPlugin.loader,
+          "@teamsupercell/typings-for-css-modules-loader",
           {
             loader: "css-loader",
             options: {
