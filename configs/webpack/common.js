@@ -2,6 +2,7 @@
 const Dotenv = require("dotenv-webpack");
 const { resolve } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   resolve: {
@@ -21,7 +22,27 @@ module.exports = {
       },
       {
         test: /\.(scss|sass)$/,
+        include: /\.classic\.(scss|sass)$/,
+        // exclude: /\.module\.(scss|sass)$/,
         use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(scss|sass)$/,
+        exclude: /\.classic\.(scss|sass)$/,
+        // include: /\.module\.(scss|sass)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              modules: {
+                localIdentName: "[local]_[hash:base64:5]", //[name]
+              },
+            },
+          },
+          "sass-loader",
+        ],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -34,6 +55,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ template: "index.html.ejs" }),
+    new MiniCssExtractPlugin(),
     new Dotenv(),
   ],
   externals: {
