@@ -1,0 +1,30 @@
+.dialog {
+	h2 {
+		color: #1976D2;
+		font-size: 16px !important;
+		line-height: 20px !important;
+		font-weight: 700 !important;
+	}
+}
+
+.buttons {
+	width: 100%;
+}
+
+.buttons button {
+	margin: 10px;
+}
+
+.cancel {
+	color: #757575 !important;
+}
+
+.mobileButtons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	button {
+		flex: 1;
+	}
+}
