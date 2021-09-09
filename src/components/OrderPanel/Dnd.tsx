@@ -2,7 +2,7 @@ import React from "react";
 // @ts-ignore
 import ReactDragListView from "react-drag-listview/lib/index.js";
 import DragIndicatorIcon from "@material-ui/icons/DragIndicator";
-import styles from "./dnd.module.scss";
+import styles from "./dnd.scss";
 import { moveInArray } from "./utils";
 
 interface IElement {

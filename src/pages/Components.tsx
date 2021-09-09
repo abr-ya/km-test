@@ -16,7 +16,7 @@ const Components = (): JSX.Element => {
     <div className="container">
       <h1>Components page</h1>
       <h2>Кастомная кнопка</h2>
-      <ButtonPrim text="Я кнопка" handler={butonClickHandler} />
+      <ButtonPrim text="Я кнопка!" handler={butonClickHandler} />
 
       <h2>Панель сортировки</h2>
       <OrderPanel tableConfig={tableConfig} orderHandler={orderHandler} />

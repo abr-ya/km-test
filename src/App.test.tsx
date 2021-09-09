@@ -9,7 +9,7 @@ describe("App Component ...", () => {
   });
 
   test("renders Title App and it has correct class", () => {
-    const Header = screen.getByText("React App");
+    const Header = screen.getByText("KM Test React App");
     expect(Header).toBeEnabled();
     expect(Header).toHaveClass("navbar-brand");
   });
